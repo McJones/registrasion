@@ -1,7 +1,7 @@
 import itertools
 
 from django.db.models import Sum
-from registrasion import models as rego
+from registration import models as rego
 
 from category import CategoryController
 from conditions import ConditionController

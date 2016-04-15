@@ -9,27 +9,27 @@ import django.utils.timezone
 
 class Migration(migrations.Migration):
 
-    replaces = [('registrasion', '0018_creditnote_creditnoteapplication_creditnoterefund'), ('registrasion', '0019_auto_20160410_0753')]
+    replaces = [('registration', '0018_creditnote_creditnoteapplication_creditnoterefund'), ('registration', '0019_auto_20160410_0753')]
 
     dependencies = [
-        ('registrasion', '0017_auto_20160408_0731'),
+        ('registration', '0017_auto_20160408_0731'),
     ]
 
     operations = [
         migrations.CreateModel(
             name='CreditNote',
             fields=[
-                ('paymentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registrasion.PaymentBase')),
+                ('paymentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registration.PaymentBase')),
             ],
-            bases=('registrasion.paymentbase',),
+            bases=('registration.paymentbase',),
         ),
         migrations.CreateModel(
             name='CreditNoteApplication',
             fields=[
-                ('paymentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registrasion.PaymentBase')),
-                ('parent', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='registrasion.CreditNote')),
+                ('paymentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registration.PaymentBase')),
+                ('parent', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='registration.CreditNote')),
             ],
-            bases=('registrasion.paymentbase',),
+            bases=('registration.paymentbase',),
         ),
         migrations.CreateModel(
             name='CreditNoteRefund',
@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('time', models.DateTimeField(default=django.utils.timezone.now)),
                 ('reference', models.CharField(max_length=255)),
-                ('parent', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='registrasion.CreditNote')),
+                ('parent', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='registration.CreditNote')),
             ],
         ),
     ]

@@ -2,10 +2,10 @@ import pytz
 
 from django.core.exceptions import ValidationError
 
-from registrasion import models as rego
-from registrasion.controllers.category import CategoryController
+from registration import models as rego
+from registration.controllers.category import CategoryController
 from controller_helpers import TestingCartController
-from registrasion.controllers.product import ProductController
+from registration.controllers.product import ProductController
 
 from test_cart import RegistrationCartTestCase
 

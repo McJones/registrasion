@@ -3,19 +3,19 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import registrasion.util
+import registration.util
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registrasion', '0013_auto_20160406_2228_squashed_0015_auto_20160406_1942'),
+        ('registration', '0013_auto_20160406_2228_squashed_0015_auto_20160406_1942'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='attendee',
             name='access_code',
-            field=models.CharField(default=registrasion.util.generate_access_code, max_length=6, unique=True),
+            field=models.CharField(default=registration.util.generate_access_code, max_length=6, unique=True),
         ),
     ]

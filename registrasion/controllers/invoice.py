@@ -5,7 +5,7 @@ from django.db import transaction
 from django.db.models import Sum
 from django.utils import timezone
 
-from registrasion import models as rego
+from registration import models as rego
 
 from cart import CartController
 from credit_note import CreditNoteController

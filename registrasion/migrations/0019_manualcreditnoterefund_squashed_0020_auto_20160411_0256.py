@@ -9,11 +9,11 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    replaces = [('registrasion', '0019_manualcreditnoterefund'), ('registrasion', '0020_auto_20160411_0256')]
+    replaces = [('registration', '0019_manualcreditnoterefund'), ('registration', '0020_auto_20160411_0256')]
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('registrasion', '0018_creditnote_creditnoteapplication_creditnoterefund_squashed_0019_auto_20160410_0753'),
+        ('registration', '0018_creditnote_creditnoteapplication_creditnoterefund_squashed_0019_auto_20160410_0753'),
     ]
 
     operations = [
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
             name='ManualCreditNoteRefund',
             fields=[
                 ('entered_by', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-                ('creditnoterefund_ptr', models.OneToOneField(auto_created=True, default=0, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registrasion.CreditNoteRefund')),
+                ('creditnoterefund_ptr', models.OneToOneField(auto_created=True, default=0, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registration.CreditNoteRefund')),
             ],
         ),
     ]

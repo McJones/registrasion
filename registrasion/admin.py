@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 import nested_admin
 
-from registrasion import models as rego
+from registration import models as rego
 
 
 class EffectsDisplayMixin(object):

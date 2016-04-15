@@ -2,7 +2,7 @@
 import os
 from setuptools import setup, find_packages
 
-import registrasion
+import registration
 
 
 def read_file(filename):
@@ -16,13 +16,13 @@ def read_file(filename):
 
 
 setup(
-    name="registrasion",
+    name="registration",
     author="Christopher Neugebauer",
     author_email="_@chrisjrn.com",
-    version=registrasion.__version__,
+    version=registration.__version__,
     description="A registration app for the Symposion conference management "
                 "system.",
-    url="http://github.com/chrisjrn/registrasion/",
+    url="http://github.com/chrisjrn/registration/",
     packages=find_packages(),
     include_package_data=True,
     classifiers=(

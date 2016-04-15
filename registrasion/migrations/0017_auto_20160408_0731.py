@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registrasion', '0016_auto_20160408_0234'),
+        ('registration', '0016_auto_20160408_0234'),
     ]
 
     operations = [
@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='attendee',
             name='guided_categories_complete',
-            field=models.ManyToManyField(to='registrasion.Category'),
+            field=models.ManyToManyField(to='registration.Category'),
         ),
     ]

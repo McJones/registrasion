@@ -1,7 +1,7 @@
-from registrasion.controllers.cart import CartController
-from registrasion.controllers.credit_note import CreditNoteController
-from registrasion.controllers.invoice import InvoiceController
-from registrasion import models as rego
+from registration.controllers.cart import CartController
+from registration.controllers.credit_note import CreditNoteController
+from registration.controllers.invoice import InvoiceController
+from registration import models as rego
 
 from django.core.exceptions import ObjectDoesNotExist
 

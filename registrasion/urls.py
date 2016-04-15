@@ -3,7 +3,7 @@ import views
 from django.conf.urls import url, patterns
 
 urlpatterns = patterns(
-    "registrasion.views",
+    "registration.views",
     url(r"^category/([0-9]+)$", "product_category", name="product_category"),
     url(r"^checkout$", "checkout", name="checkout"),
     url(r"^credit_note/([0-9]+)$", views.credit_note, name="credit_note"),

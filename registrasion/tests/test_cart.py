@@ -7,8 +7,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import ValidationError
 from django.test import TestCase
 
-from registrasion import models as rego
-from registrasion.controllers.product import ProductController
+from registration import models as rego
+from registration.controllers.product import ProductController
 
 from controller_helpers import TestingCartController
 from patch_datetime import SetTimeMixin

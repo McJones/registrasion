@@ -3,6 +3,6 @@ from django.apps import AppConfig
 
 
 class RegistrasionConfig(AppConfig):
-    name = "registrasion"
-    label = "registrasion"
+    name = "registration"
+    label = "registration"
     verbose_name = "Registrasion"

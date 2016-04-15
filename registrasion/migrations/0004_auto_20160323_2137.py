@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('registrasion', '0003_auto_20160323_2044'),
+        ('registration', '0003_auto_20160323_2044'),
     ]
 
     operations = [
@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('dietary_requirements', models.CharField(max_length=256, blank=True)),
                 ('accessibility_requirements', models.CharField(max_length=256, blank=True)),
                 ('gender', models.CharField(max_length=64, blank=True)),
-                ('profile', models.OneToOneField(to='registrasion.Attendee')),
+                ('profile', models.OneToOneField(to='registration.Attendee')),
             ],
         ),
         migrations.RemoveField(

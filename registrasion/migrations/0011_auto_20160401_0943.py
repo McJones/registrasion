@@ -9,7 +9,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registrasion', '0010_auto_20160330_2342'),
+        ('registration', '0010_auto_20160330_2342'),
     ]
 
     operations = [
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='AttendeeProfileBase',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('attendee', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='registrasion.Attendee')),
+                ('attendee', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='registration.Attendee')),
             ],
         ),
         migrations.RemoveField(

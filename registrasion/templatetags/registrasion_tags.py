@@ -1,5 +1,5 @@
-from registrasion import models as rego
-from registrasion.controllers.category import CategoryController
+from registration import models as rego
+from registration.controllers.category import CategoryController
 
 from collections import namedtuple
 from django import template

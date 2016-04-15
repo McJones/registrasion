@@ -1,1 +1,1 @@
-default_app_config = "registrasion.apps.RegistrationConfig"
+default_app_config = "registration.apps.RegistrationConfig"

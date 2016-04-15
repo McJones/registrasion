@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registrasion', '0020_auto_20160411_0258'),
+        ('registration', '0020_auto_20160411_0258'),
     ]
 
     operations = [
@@ -47,7 +47,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='enablingconditionbase',
             name='categories',
-            field=models.ManyToManyField(blank=True, help_text="Categories whose products are affected by this flag's condition.", to=b'registrasion.Category'),
+            field=models.ManyToManyField(blank=True, help_text="Categories whose products are affected by this flag's condition.", to=b'registration.Category'),
         ),
         migrations.RenameField(
             model_name='enablingconditionbase',
@@ -62,16 +62,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='enablingconditionbase',
             name='products',
-            field=models.ManyToManyField(blank=True, help_text="Products affected by this flag's condition.", to=b'registrasion.Product'),
+            field=models.ManyToManyField(blank=True, help_text="Products affected by this flag's condition.", to=b'registration.Product'),
         ),
         migrations.AlterField(
             model_name='enablingconditionbase',
             name='categories',
-            field=models.ManyToManyField(blank=True, help_text="Categories whose products are affected by this flag's condition.", related_name='flagbase_set', to=b'registrasion.Category'),
+            field=models.ManyToManyField(blank=True, help_text="Categories whose products are affected by this flag's condition.", related_name='flagbase_set', to=b'registration.Category'),
         ),
         migrations.AlterField(
             model_name='enablingconditionbase',
             name='products',
-            field=models.ManyToManyField(blank=True, help_text="Products affected by this flag's condition.", related_name='flagbase_set', to=b'registrasion.Product'),
+            field=models.ManyToManyField(blank=True, help_text="Products affected by this flag's condition.", related_name='flagbase_set', to=b'registration.Product'),
         ),
     ]

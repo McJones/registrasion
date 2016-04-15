@@ -7,7 +7,7 @@ from collections import namedtuple
 from django.db.models import Sum
 from django.utils import timezone
 
-from registrasion import models as rego
+from registration import models as rego
 
 
 ConditionAndRemainder = namedtuple(

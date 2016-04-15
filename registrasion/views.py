@@ -1,13 +1,13 @@
 import sys
 
-from registrasion import forms
-from registrasion import models as rego
-from registrasion.controllers import discount
-from registrasion.controllers.cart import CartController
-from registrasion.controllers.credit_note import CreditNoteController
-from registrasion.controllers.invoice import InvoiceController
-from registrasion.controllers.product import ProductController
-from registrasion.exceptions import CartValidationError
+from registration import forms
+from registration import models as rego
+from registration.controllers import discount
+from registration.controllers.cart import CartController
+from registration.controllers.credit_note import CreditNoteController
+from registration.controllers.invoice import InvoiceController
+from registration.controllers.product import ProductController
+from registration.exceptions import CartValidationError
 
 from collections import namedtuple
 
@@ -65,7 +65,7 @@ def guided_registration(request, page_id=0):
     if attendee.completed_registration:
         return render(
             request,
-            "registrasion/guided_registration_complete.html",
+            "registration/guided_registration_complete.html",
             {},
         )
 
@@ -194,7 +194,7 @@ def guided_registration(request, page_id=0):
         "title": title,
         "total_steps": 3,
     }
-    return render(request, "registrasion/guided_registration.html", data)
+    return render(request, "registration/guided_registration.html", data)
 
 
 @login_required
@@ -211,7 +211,7 @@ def edit_profile(request):
     data = {
         "form": form,
     }
-    return render(request, "registrasion/profile_form.html", data)
+    return render(request, "registration/profile_form.html", data)
 
 
 def handle_profile(request, prefix):
@@ -303,7 +303,7 @@ def product_category(request, category_id):
         "voucher_form": voucher_form,
     }
 
-    return render(request, "registrasion/product_category.html", data)
+    return render(request, "registration/product_category.html", data)
 
 
 def handle_products(request, category, products, prefix):
@@ -450,7 +450,7 @@ def checkout_errors(request, errors):
         "error_list": error_list,
     }
 
-    return render(request, "registrasion/checkout_errors.html", data)
+    return render(request, "registration/checkout_errors.html", data)
 
 
 def invoice_access(request, access_code):
@@ -492,7 +492,7 @@ def invoice(request, invoice_id, access_code=None):
         "invoice": current_invoice.invoice,
     }
 
-    return render(request, "registrasion/invoice.html", data)
+    return render(request, "registration/invoice.html", data)
 
 
 @login_required
@@ -524,7 +524,7 @@ def manual_payment(request, invoice_id):
         "form": form,
     }
 
-    return render(request, "registrasion/manual_payment.html", data)
+    return render(request, "registration/manual_payment.html", data)
 
 
 @login_required
@@ -596,4 +596,4 @@ def credit_note(request, note_id, access_code=None):
         "refund_form": refund_form,
     }
 
-    return render(request, "registrasion/credit_note.html", data)
+    return render(request, "registration/credit_note.html", data)

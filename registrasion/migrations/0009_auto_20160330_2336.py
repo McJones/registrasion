@@ -8,7 +8,7 @@ import datetime
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registrasion', '0008_cart_released'),
+        ('registration', '0008_cart_released'),
     ]
 
     operations = [
@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='categoryenablingcondition',
             name='enabling_category',
-            field=models.ForeignKey(help_text='If a product from this category is purchased, this condition is met.', to='registrasion.Category'),
+            field=models.ForeignKey(help_text='If a product from this category is purchased, this condition is met.', to='registration.Category'),
         ),
         migrations.AlterField(
             model_name='discountbase',
@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='enablingconditionbase',
             name='categories',
-            field=models.ManyToManyField(help_text='Categories whose products are enabled if this condition is met.', to='registrasion.Category', blank=True),
+            field=models.ManyToManyField(help_text='Categories whose products are enabled if this condition is met.', to='registration.Category', blank=True),
         ),
         migrations.AlterField(
             model_name='enablingconditionbase',
@@ -58,12 +58,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='enablingconditionbase',
             name='products',
-            field=models.ManyToManyField(help_text='Products that are enabled if this condition is met.', to='registrasion.Product', blank=True),
+            field=models.ManyToManyField(help_text='Products that are enabled if this condition is met.', to='registration.Product', blank=True),
         ),
         migrations.AlterField(
             model_name='includedproductdiscount',
             name='enabling_products',
-            field=models.ManyToManyField(help_text='If one of these products are purchased, the discounts below will be enabled.', to='registrasion.Product', verbose_name='Including product'),
+            field=models.ManyToManyField(help_text='If one of these products are purchased, the discounts below will be enabled.', to='registration.Product', verbose_name='Including product'),
         ),
         migrations.AlterField(
             model_name='product',
@@ -78,7 +78,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='productenablingcondition',
             name='enabling_products',
-            field=models.ManyToManyField(help_text='If one of these products are purchased, this condition is met.', to='registrasion.Product'),
+            field=models.ManyToManyField(help_text='If one of these products are purchased, this condition is met.', to='registration.Product'),
         ),
         migrations.AlterField(
             model_name='timeorstocklimitdiscount',

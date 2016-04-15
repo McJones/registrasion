@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registrasion', '0006_category_required'),
+        ('registration', '0006_category_required'),
     ]
 
     operations = [

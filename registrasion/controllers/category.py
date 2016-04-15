@@ -1,4 +1,4 @@
-from registrasion import models as rego
+from registration import models as rego
 
 from django.db.models import Sum
 

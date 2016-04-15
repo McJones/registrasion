@@ -9,10 +9,10 @@ import django.utils.timezone
 
 class Migration(migrations.Migration):
 
-    replaces = [('registrasion', '0013_auto_20160406_2228'), ('registrasion', '0014_auto_20160406_1847'), ('registrasion', '0015_auto_20160406_1942')]
+    replaces = [('registration', '0013_auto_20160406_2228'), ('registration', '0014_auto_20160406_1847'), ('registration', '0015_auto_20160406_1942')]
 
     dependencies = [
-        ('registrasion', '0012_auto_20160406_1212'),
+        ('registration', '0012_auto_20160406_1212'),
     ]
 
     operations = [
@@ -63,14 +63,14 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='lineitem',
             name='product',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='registrasion.Product'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='registration.Product'),
         ),
         migrations.CreateModel(
             name='ManualPayment',
             fields=[
-                ('paymentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registrasion.PaymentBase')),
+                ('paymentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registration.PaymentBase')),
             ],
-            bases=('registrasion.paymentbase',),
+            bases=('registration.paymentbase',),
         ),
         migrations.DeleteModel(
             name='Payment',
@@ -78,7 +78,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='paymentbase',
             name='invoice',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='registrasion.Invoice'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='registration.Invoice'),
         ),
         migrations.AlterField(
             model_name='invoice',

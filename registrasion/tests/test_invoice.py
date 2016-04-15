@@ -4,7 +4,7 @@ import pytz
 from decimal import Decimal
 from django.core.exceptions import ValidationError
 
-from registrasion import models as rego
+from registration import models as rego
 from controller_helpers import TestingCartController
 from controller_helpers import TestingCreditNoteController
 from controller_helpers import TestingInvoiceController

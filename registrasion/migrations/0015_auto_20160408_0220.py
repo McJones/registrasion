@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registrasion', '0014_attendee_access_code'),
+        ('registration', '0014_attendee_access_code'),
     ]
 
     operations = [

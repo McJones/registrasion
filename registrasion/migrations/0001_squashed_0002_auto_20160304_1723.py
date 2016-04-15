@@ -9,7 +9,7 @@ from django.conf import settings
 
 class Migration(migrations.Migration):
 
-    replaces = [('registrasion', '0001_initial'), ('registrasion', '0002_auto_20160304_1723')]
+    replaces = [('registration', '0001_initial'), ('registration', '0002_auto_20160304_1723')]
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
@@ -58,7 +58,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('percentage', models.DecimalField(max_digits=4, decimal_places=1, blank=True)),
                 ('quantity', models.PositiveIntegerField()),
-                ('category', models.ForeignKey(to='registrasion.Category')),
+                ('category', models.ForeignKey(to='registration.Category')),
             ],
         ),
         migrations.CreateModel(
@@ -75,7 +75,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('quantity', models.PositiveIntegerField()),
-                ('cart', models.ForeignKey(to='registrasion.Cart')),
+                ('cart', models.ForeignKey(to='registration.Cart')),
             ],
         ),
         migrations.CreateModel(
@@ -94,7 +94,7 @@ class Migration(migrations.Migration):
                 ('void', models.BooleanField(default=False)),
                 ('paid', models.BooleanField(default=False)),
                 ('value', models.DecimalField(max_digits=8, decimal_places=2)),
-                ('cart', models.ForeignKey(to='registrasion.Cart', null=True)),
+                ('cart', models.ForeignKey(to='registration.Cart', null=True)),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
@@ -105,7 +105,7 @@ class Migration(migrations.Migration):
                 ('description', models.CharField(max_length=255)),
                 ('quantity', models.PositiveIntegerField()),
                 ('price', models.DecimalField(max_digits=8, decimal_places=2)),
-                ('invoice', models.ForeignKey(to='registrasion.Invoice')),
+                ('invoice', models.ForeignKey(to='registration.Invoice')),
             ],
         ),
         migrations.CreateModel(
@@ -115,7 +115,7 @@ class Migration(migrations.Migration):
                 ('time', models.DateTimeField(default=django.utils.timezone.now)),
                 ('reference', models.CharField(max_length=64)),
                 ('amount', models.DecimalField(max_digits=8, decimal_places=2)),
-                ('invoice', models.ForeignKey(to='registrasion.Invoice')),
+                ('invoice', models.ForeignKey(to='registration.Invoice')),
             ],
         ),
         migrations.CreateModel(
@@ -128,7 +128,7 @@ class Migration(migrations.Migration):
                 ('limit_per_user', models.PositiveIntegerField(verbose_name='Limit per user', blank=True)),
                 ('reservation_duration', models.DurationField(default=datetime.timedelta(0, 3600), verbose_name='Reservation duration')),
                 ('order', models.PositiveIntegerField(verbose_name='Display order')),
-                ('category', models.ForeignKey(verbose_name='Product category', to='registrasion.Category')),
+                ('category', models.ForeignKey(verbose_name='Product category', to='registration.Category')),
             ],
         ),
         migrations.CreateModel(
@@ -136,8 +136,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('quantity', models.PositiveIntegerField()),
-                ('cart', models.ForeignKey(to='registrasion.Cart')),
-                ('product', models.ForeignKey(to='registrasion.Product')),
+                ('cart', models.ForeignKey(to='registration.Cart')),
+                ('product', models.ForeignKey(to='registration.Product')),
             ],
         ),
         migrations.CreateModel(
@@ -161,34 +161,34 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CategoryEnablingCondition',
             fields=[
-                ('enablingconditionbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registrasion.EnablingConditionBase')),
-                ('enabling_category', models.ForeignKey(to='registrasion.Category')),
+                ('enablingconditionbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registration.EnablingConditionBase')),
+                ('enabling_category', models.ForeignKey(to='registration.Category')),
             ],
-            bases=('registrasion.enablingconditionbase',),
+            bases=('registration.enablingconditionbase',),
         ),
         migrations.CreateModel(
             name='IncludedProductDiscount',
             fields=[
-                ('discountbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registrasion.DiscountBase')),
-                ('enabling_products', models.ManyToManyField(to=b'registrasion.Product', verbose_name='Including product')),
+                ('discountbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registration.DiscountBase')),
+                ('enabling_products', models.ManyToManyField(to=b'registration.Product', verbose_name='Including product')),
             ],
             options={
                 'verbose_name': 'Product inclusion',
             },
-            bases=('registrasion.discountbase',),
+            bases=('registration.discountbase',),
         ),
         migrations.CreateModel(
             name='ProductEnablingCondition',
             fields=[
-                ('enablingconditionbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registrasion.EnablingConditionBase')),
-                ('enabling_products', models.ManyToManyField(to=b'registrasion.Product')),
+                ('enablingconditionbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registration.EnablingConditionBase')),
+                ('enabling_products', models.ManyToManyField(to=b'registration.Product')),
             ],
-            bases=('registrasion.enablingconditionbase',),
+            bases=('registration.enablingconditionbase',),
         ),
         migrations.CreateModel(
             name='TimeOrStockLimitDiscount',
             fields=[
-                ('discountbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registrasion.DiscountBase')),
+                ('discountbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registration.DiscountBase')),
                 ('start_time', models.DateTimeField(null=True, verbose_name='Start time', blank=True)),
                 ('end_time', models.DateTimeField(null=True, verbose_name='End time', blank=True)),
                 ('limit', models.PositiveIntegerField(null=True, verbose_name='Limit', blank=True)),
@@ -196,78 +196,78 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Promotional discount',
             },
-            bases=('registrasion.discountbase',),
+            bases=('registration.discountbase',),
         ),
         migrations.CreateModel(
             name='TimeOrStockLimitEnablingCondition',
             fields=[
-                ('enablingconditionbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registrasion.EnablingConditionBase')),
+                ('enablingconditionbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registration.EnablingConditionBase')),
                 ('start_time', models.DateTimeField(null=True, verbose_name='Start time')),
                 ('end_time', models.DateTimeField(null=True, verbose_name='End time')),
                 ('limit', models.PositiveIntegerField(null=True, verbose_name='Limit')),
             ],
-            bases=('registrasion.enablingconditionbase',),
+            bases=('registration.enablingconditionbase',),
         ),
         migrations.CreateModel(
             name='VoucherDiscount',
             fields=[
-                ('discountbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registrasion.DiscountBase')),
-                ('voucher', models.OneToOneField(verbose_name='Voucher', to='registrasion.Voucher')),
+                ('discountbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registration.DiscountBase')),
+                ('voucher', models.OneToOneField(verbose_name='Voucher', to='registration.Voucher')),
             ],
-            bases=('registrasion.discountbase',),
+            bases=('registration.discountbase',),
         ),
         migrations.CreateModel(
             name='VoucherEnablingCondition',
             fields=[
-                ('enablingconditionbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registrasion.EnablingConditionBase')),
-                ('voucher', models.OneToOneField(to='registrasion.Voucher')),
+                ('enablingconditionbase_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='registration.EnablingConditionBase')),
+                ('voucher', models.OneToOneField(to='registration.Voucher')),
             ],
-            bases=('registrasion.enablingconditionbase',),
+            bases=('registration.enablingconditionbase',),
         ),
         migrations.AddField(
             model_name='enablingconditionbase',
             name='categories',
-            field=models.ManyToManyField(to=b'registrasion.Category', blank=True),
+            field=models.ManyToManyField(to=b'registration.Category', blank=True),
         ),
         migrations.AddField(
             model_name='enablingconditionbase',
             name='products',
-            field=models.ManyToManyField(to=b'registrasion.Product', blank=True),
+            field=models.ManyToManyField(to=b'registration.Product', blank=True),
         ),
         migrations.AddField(
             model_name='discountitem',
             name='discount',
-            field=models.ForeignKey(to='registrasion.DiscountBase'),
+            field=models.ForeignKey(to='registration.DiscountBase'),
         ),
         migrations.AddField(
             model_name='discountitem',
             name='product',
-            field=models.ForeignKey(to='registrasion.Product'),
+            field=models.ForeignKey(to='registration.Product'),
         ),
         migrations.AddField(
             model_name='discountforproduct',
             name='discount',
-            field=models.ForeignKey(to='registrasion.DiscountBase'),
+            field=models.ForeignKey(to='registration.DiscountBase'),
         ),
         migrations.AddField(
             model_name='discountforproduct',
             name='product',
-            field=models.ForeignKey(to='registrasion.Product'),
+            field=models.ForeignKey(to='registration.Product'),
         ),
         migrations.AddField(
             model_name='discountforcategory',
             name='discount',
-            field=models.ForeignKey(to='registrasion.DiscountBase'),
+            field=models.ForeignKey(to='registration.DiscountBase'),
         ),
         migrations.AddField(
             model_name='cart',
             name='vouchers',
-            field=models.ManyToManyField(to=b'registrasion.Voucher', blank=True),
+            field=models.ManyToManyField(to=b'registration.Voucher', blank=True),
         ),
         migrations.AddField(
             model_name='badge',
             name='profile',
-            field=models.OneToOneField(to='registrasion.Profile'),
+            field=models.OneToOneField(to='registration.Profile'),
         ),
         migrations.AlterField(
             model_name='discountforcategory',

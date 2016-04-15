@@ -1,6 +1,6 @@
 from django.db import transaction
 
-from registrasion import models as rego
+from registration import models as rego
 
 
 class CreditNoteController(object):

@@ -2,8 +2,8 @@ import pytz
 
 from decimal import Decimal
 
-from registrasion import models as rego
-from registrasion.controllers import discount
+from registration import models as rego
+from registration.controllers import discount
 from controller_helpers import TestingCartController
 
 from test_cart import RegistrationCartTestCase

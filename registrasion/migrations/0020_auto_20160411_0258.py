@@ -9,13 +9,13 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('registrasion', '0019_manualcreditnoterefund_squashed_0020_auto_20160411_0256'),
+        ('registration', '0019_manualcreditnoterefund_squashed_0020_auto_20160411_0256'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='manualcreditnoterefund',
             name='creditnoterefund_ptr',
-            field=models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registrasion.CreditNoteRefund'),
+            field=models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='registration.CreditNoteRefund'),
         ),
     ]

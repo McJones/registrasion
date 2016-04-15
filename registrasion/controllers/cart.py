@@ -9,8 +9,8 @@ from django.db import transaction
 from django.db.models import Max
 from django.utils import timezone
 
-from registrasion import models as rego
-from registrasion.exceptions import CartValidationError
+from registration import models as rego
+from registration.exceptions import CartValidationError
 
 from category import CategoryController
 from conditions import ConditionController

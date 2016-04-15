@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from controller_helpers import TestingCartController
 from test_cart import RegistrationCartTestCase
 
-from registrasion import models as rego
+from registration import models as rego
 
 UTC = pytz.timezone('UTC')
 
